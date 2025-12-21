@@ -11,18 +11,18 @@
             "icon": "code-2"
         },
         {
-            "name": "C++",
-            "level": 70,
-            "icon": "terminal"
-        },
-        {
             "name": "Git",
             "level": 85,
             "icon": "github"
         },
         {
+            "name": "C++",
+            "level": 70,
+            "icon": "terminal"
+        },
+        {
             "name": "Software Architecture",
-            "level": 88,
+            "level": 50,
             "icon": "monitor"
         }
     ],
