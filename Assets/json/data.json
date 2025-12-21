@@ -7,12 +7,12 @@
         },
         {
             "name": "C# (.NET)",
-            "level": 90,
+            "level": 95,
             "icon": "code-2"
         },
         {
-            "name": "C++ / OpenGL",
-            "level": 80,
+            "name": "C++",
+            "level": 70,
             "icon": "terminal"
         },
         {
