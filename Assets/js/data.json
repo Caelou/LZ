@@ -1,0 +1,82 @@
+{
+    "skills": [
+        {
+            "name": "Unity 3D/2D",
+            "level": 95,
+            "icon": "gamepad-2"
+        },
+        {
+            "name": "C# (.NET)",
+            "level": 90,
+            "icon": "code-2"
+        },
+        {
+            "name": "C++ / OpenGL",
+            "level": 80,
+            "icon": "terminal"
+        },
+        {
+            "name": "Git / CI-CD",
+            "level": 85,
+            "icon": "github"
+        },
+        {
+            "name": "Software Architecture",
+            "level": 88,
+            "icon": "monitor"
+        }
+    ],
+    "games": [
+        {
+            "title": "Shadow Protocol",
+            "category": "Action / Stealth",
+            "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800",
+            "link": "https://caelou-dellmont.itch.io",
+            "desc": "Système d'IA avancée et gestion de l'éclairage dynamique sous Unity."
+        },
+        {
+            "title": "Neon Runner",
+            "category": "Arcade / 3D",
+            "image": "https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?auto=format&fit=crop&q=80&w=800",
+            "link": "https://caelou-dellmont.itch.io",
+            "desc": "Fast-paced runner avec génération procédurale de niveaux."
+        },
+        {
+            "title": "Game Jam Prototype",
+            "category": "Puzzle / 2D",
+            "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800",
+            "link": "https://caelou-dellmont.itch.io",
+            "desc": "Concept innovant réalisé en 48h. Focus sur le game design."
+        }
+    ],
+    "experiences": [
+        {
+            "company": "Visigram",
+            "role": "Lead Développeur",
+            "period": "Depuis fév. 2024",
+            "desc": "Responsable du développement et de l'évolution des frameworks logiciels pédagogiques pour la formation santé. Gestion de la qualité technique.",
+            "color": "unity"
+        },
+        {
+            "company": "Pinpin Team",
+            "role": "Développeur Gameplay",
+            "period": "Sept. 2021 - Avril 2023",
+            "desc": "Développement de jeux mobiles et d'outils (tools) pour artistes et développeurs.",
+            "color": "unity"
+        },
+        {
+            "company": "Alsace Digitale",
+            "role": "Service Civique Volontaire",
+            "period": "Avril 2020 - Oct. 2020",
+            "desc": "Organisation et animation de stages d'initiation à la programmation.",
+            "color": "unity"
+        },
+        {
+            "company": "Crédit Agricole",
+            "role": "Développeur Web",
+            "period": "Juil. 2018 - Déc. 2018",
+            "desc": "Mise à jour du site internet et intégration HTML.",
+            "color": "unity"
+        }
+    ]
+}
