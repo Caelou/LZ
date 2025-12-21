@@ -35,9 +35,9 @@
             "desc": "Système d'IA avancée et gestion de l'éclairage dynamique sous Unity."
         },
         {
-            "title": "Neon Runner",
+            "title": "Bubble Pop",
             "category": "Arcade / 3D",
-            "image": "https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?auto=format&fit=crop&q=80&w=800",
+            "image": "https://caelou.github.io/LZ/Assets/images/Games/BubblePop/Icon_Full.png",
             "link": "https://caelou-dellmont.itch.io",
             "desc": "Fast-paced runner avec génération procédurale de niveaux."
         },
