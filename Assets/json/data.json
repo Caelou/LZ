@@ -28,9 +28,9 @@
     ],
     "games": [
         {
-            "title": "Shadow Protocol",
-            "category": "Action / Stealth",
-            "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800",
+            "title": "Bubble Sort",
+            "category": "Puzzle / Hypercasual",
+            "image": "https://caelou.github.io/LZ/Assets/images/Games/BubbleSort/bubble%20sort%20icon.png",
             "link": "https://caelou-dellmont.itch.io",
             "desc": "Système d'IA avancée et gestion de l'éclairage dynamique sous Unity."
         },
