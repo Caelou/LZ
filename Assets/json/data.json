@@ -32,21 +32,21 @@
             "category": "Puzzle / Hypercasual",
             "image": "https://caelou.github.io/LZ/Assets/images/Games/BubbleSort/bubble%20sort%20icon.png",
             "link": "https://caelou-dellmont.itch.io",
-            "desc": "Système d'IA avancée et gestion de l'éclairage dynamique sous Unity."
+            "desc": "Balayez dans n'importe quelle direction pour déplacer toutes les bulles et détruisez-les si le mur a la même couleur."
         },
         {
             "title": "Bubble Pop",
-            "category": "Arcade / 3D",
+            "category": "Puzzle / Hypercasual",
             "image": "https://caelou.github.io/LZ/Assets/images/Games/BubblePop/Icon_Full.png",
             "link": "https://caelou-dellmont.itch.io",
-            "desc": "Fast-paced runner avec génération procédurale de niveaux."
+            "desc": "Faites éclater les bulles dans le bon ordre pour toutes les faire exploser."
         },
         {
             "title": "Hexatown",
-            "category": "Puzzle / 2D",
+            "category": "Puzzle / Hypercasual",
             "image": "https://caelou.github.io/LZ/Assets/images/Games/HexaTown/icon.png",
             "link": "https://caelou-dellmont.itch.io",
-            "desc": "Concept innovant réalisé en 48h. Focus sur le game design."
+            "desc": "Replacez les tuiles à leur place pour reconstruire les routes."
         }
     ],
     "experiences": [
