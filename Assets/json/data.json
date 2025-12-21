@@ -42,9 +42,9 @@
             "desc": "Fast-paced runner avec génération procédurale de niveaux."
         },
         {
-            "title": "Game Jam Prototype",
+            "title": "Hexatown",
             "category": "Puzzle / 2D",
-            "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800",
+            "image": "https://caelou.github.io/LZ/Assets/images/Games/HexaTown/icon.png",
             "link": "https://caelou-dellmont.itch.io",
             "desc": "Concept innovant réalisé en 48h. Focus sur le game design."
         }
