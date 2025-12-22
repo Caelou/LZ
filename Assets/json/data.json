@@ -1,82 +1,59 @@
 {
-    "skills": [
-        {
-            "name": "Unity 3D/2D",
-            "level": 95,
-            "icon": "gamepad-2"
-        },
-        {
-            "name": "C# (.NET)",
-            "level": 95,
-            "icon": "code-2"
-        },
-        {
-            "name": "Git",
-            "level": 85,
-            "icon": "github"
-        },
-        {
-            "name": "C++",
-            "level": 70,
-            "icon": "terminal"
-        },
-        {
-            "name": "Software Architecture",
-            "level": 50,
-            "icon": "monitor"
-        }
-    ],
-    "games": [
-        {
-            "title": "Bubble Sort",
-            "category": "Puzzle / Hypercasual",
-            "image": "https://caelou.github.io/LZ/Assets/images/Games/BubbleSort/bubble%20sort%20icon.png",
-            "link": "https://caelou-dellmont.itch.io",
-            "desc": "Balayez dans n'importe quelle direction pour déplacer toutes les bulles et détruisez-les si le mur a la même couleur."
-        },
-        {
-            "title": "Bubble Pop",
-            "category": "Puzzle / Hypercasual",
-            "image": "https://caelou.github.io/LZ/Assets/images/Games/BubblePop/Icon_Full.png",
-            "link": "https://caelou-dellmont.itch.io",
-            "desc": "Faites éclater les bulles dans le bon ordre pour toutes les faire exploser."
-        },
-        {
-            "title": "Hexatown",
-            "category": "Puzzle / Hypercasual",
-            "image": "https://caelou.github.io/LZ/Assets/images/Games/HexaTown/icon.png",
-            "link": "https://caelou-dellmont.itch.io",
-            "desc": "Replacez les tuiles à leur place pour reconstruire les routes."
-        }
-    ],
+    "competences": [ "Unity", "C#", "C++", "Git", "Bitbucket", "Gameplay Engineering", "Architecture Tools", "Frameworks Pédagogiques", "Optimisation" ],
+    "hackathons": [ "Global Game Jam", "Jam Sogeti Blue x Games", "Legal Games Week", "Hacking Industry Camp" ],
     "experiences": [
         {
-            "company": "Visigram",
-            "role": "Lead Développeur",
-            "period": "Depuis fév. 2024",
-            "desc": "Responsable du développement et de l'évolution des frameworks logiciels pédagogiques pour la formation santé. Gestion de la qualité technique.",
-            "color": "unity"
+            "poste": "Lead Développeur",
+            "entreprise": "Visigram Paris",
+            "date": "Depuis fév. 2024",
+            "description": "Responsable technique de l'évolution des frameworks logiciels pédagogiques. Management de la qualité et développement de solutions interactives."
         },
         {
-            "company": "Pinpin Team",
-            "role": "Développeur Gameplay",
-            "period": "Sept. 2021 - Avril 2023",
-            "desc": "Développement de jeux mobiles et d'outils (tools) pour artistes et développeurs.",
-            "color": "unity"
+            "poste": "Développeur Gameplay",
+            "entreprise": "Pinpin Team Paris",
+            "date": "2021 - 2023",
+            "description": "Conception de mécaniques de jeux mobiles et création d'outils Unity sur mesure pour optimiser le travail des artistes 2D/3D."
         },
         {
-            "company": "Alsace Digitale",
-            "role": "Service Civique Volontaire",
-            "period": "Avril 2020 - Oct. 2020",
-            "desc": "Organisation et animation de stages d'initiation à la programmation.",
-            "color": "unity"
+            "poste": "Service Civique",
+            "entreprise": "Alsace Digitale Strasbourg",
+            "date": "2020",
+            "description": "Vulgarisation technique et animation d'ateliers de programmation pour les jeunes et les néophytes."
         },
         {
-            "company": "Crédit Agricole",
-            "role": "Développeur Web",
-            "period": "Juil. 2018 - Déc. 2018",
-            "desc": "Mise à jour du site internet et intégration HTML.",
-            "color": "unity"
+            "poste": "Développeur Web",
+            "entreprise": "Crédit Agricole Alsace Vosges",
+            "date": "2018",
+            "description": "Gestion de portail web et intégration de campagnes marketing dynamiques (HTML/CSS)."
+        }
+    ],
+    "projets": [
+        {
+            "id": "medical-sim",
+            "titre": "Bubble Sort",
+            "resume": "Système modulaire pour simulations médicales.",
+            "img": "https://caelou.github.io/LZ/Assets/images/Games/BubbleSort/bubble%20sort%20icon.png",
+            "youtubeId": "Lvc7Id1fdoY",
+            "description": "Balayez dans n'importe quelle direction pour déplacer toutes les bulles et détruisez-les si le mur a la même couleur.",
+            "downloadUrl": "#"
+        },
+        {
+            "id": "pinpin-tools",
+            "titre": "Artist Toolset",
+            "resume": "Éditeur Unity custom pour le pipeline artistique.",
+            "img": "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?auto=format&fit=crop&q=80&w=800",
+            "youtubeId": "dQw4w9WgXcQ",
+            "description": "Suite d'outils internes permettant d'automatiser l'importation et la configuration des assets.",
+            "downloadUrl": "#"
+        },
+        {
+            "id": "proto-jam",
+            "titre": "Rhytm Prototype",
+            "resume": "Concept de jeu de rythme expérimental.",
+            "img": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800",
+            "youtubeId": "dQw4w9WgXcQ",
+            "description": "Fusion entre mécanique de plateforme et synchronisation audio.",
+            "downloadUrl": "#"
         }
     ]
 }
