@@ -31,20 +31,20 @@
         {
             "id": "bubble-sort",
             "titre": "Bubble Sort",
-            "resume": "Hypercasual puzzle game",
+            "resume": "Puzzle / Hypercasual",
             "img": "https://caelou.github.io/LZ/Assets/images/Games/BubbleSort/bubble%20sort%20icon.png",
             "youtubeId": "Lvc7Id1fdoY",
             "description": "Balayez dans n'importe quelle direction pour déplacer toutes les bulles et détruisez-les si le mur a la même couleur.",
-            "downloadUrl": "#"
+            "downloadUrl": "https://caelou-dellmont.itch.io"
         },
         {
             "id": "bubble-pop",
             "titre": "BubblePop",
-            "resume": "Hypercasual puzzle game",
+            "resume": "Puzzle / Hypercasual",
             "img": "https://caelou.github.io/LZ/Assets/images/Games/BubblePop/Icon_Full.png",
             "youtubeId": "dQw4w9WgXcQ",
             "description": "Faites éclater les bulles dans le bon ordre pour toutes les faire exploser.",
-            "downloadUrl": "#"
+            "downloadUrl": "https://caelou-dellmont.itch.io"
         },
         {
             "id": "hexatown",
@@ -53,7 +53,16 @@
             "img": "https://caelou.github.io/LZ/Assets/images/Games/HexaTown/icon.png",
             "youtubeId": "dQw4w9WgXcQ",
             "description": "Replacez les tuiles à leur place pour reconstruire les routes.",
-            "downloadUrl": "#"
+            "downloadUrl": "https://caelou-dellmont.itch.io"
+        }
+        {
+            "id": "smash-fight",
+            "titre": "SmashFight",
+            "resume": "Action / Hypercasual",
+            "img": "https://caelou.github.io/LZ/Assets/images/Games/SmashFight/icon.png",
+            "youtubeId": "dQw4w9WgXcQ",
+            "description": "Replacez les tuiles à leur place pour reconstruire les routes.",
+            "downloadUrl": "https://caelou-dellmont.itch.io"
         }
     ]
 }
