@@ -1,21 +1,21 @@
 {
-    "competences": [ "Unity", "C#", "C++", "Git", "Bitbucket", "Gameplay Engineering", "Architecture Tools", "Frameworks Pédagogiques", "Optimisation" ],
+    "competences": [ "Unity", "C#", "C++", "Git", "Bitbucket", "Gameplay Engineering", "Architecture Tools", "Optimisation" ],
     "hackathons": [ "Global Game Jam", "Jam Sogeti Blue x Games", "Legal Games Week", "Hacking Industry Camp" ],
     "experiences": [
         {
             "poste": "Lead Développeur",
             "entreprise": "Visigram Paris",
             "date": "Depuis fév. 2024",
-            "description": "Responsable technique de l'évolution des frameworks logiciels pédagogiques. Management de la qualité et développement de solutions interactives."
+            "description": "Responsable technique de la création et de l'évolution des frameworks logiciels pédagogiques. Management de la qualité et développement de solutions interactives."
         },
         {
             "poste": "Développeur Gameplay",
             "entreprise": "Pinpin Team Paris",
             "date": "2021 - 2023",
-            "description": "Conception de mécaniques de jeux mobiles et création d'outils Unity sur mesure pour optimiser le travail des artistes 2D/3D."
+            "description": "Conception de mécaniques de jeux mobiles et création d'outils Unity pour optimiser le travail des développeurs et artistes."
         },
         {
-            "poste": "Service Civique",
+            "poste": "Service Civique Volontaire",
             "entreprise": "Alsace Digitale Strasbourg",
             "date": "2020",
             "description": "Vulgarisation technique et animation d'ateliers de programmation pour les jeunes et les néophytes."
