@@ -44,7 +44,7 @@ function animateParticles(time) {
 // --- CHARGEMENT DES DONNÉES JSON ---
 async function loadSiteData() {
     try {
-        const response = await fetch('https://caelou.github.io/LZ/Assets/json/data1.json');
+        const response = await fetch('https://caelou.github.io/LZ/Assets/json/data.json');
         siteData = await response.json();
         renderContent();
     } catch (error) {
