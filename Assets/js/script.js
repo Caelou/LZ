@@ -1,8 +1,95 @@
-// --- LOGIQUE PARTICULES (Identique) ---
+// --- VARIABLES GLOBALES ET DONNÉES ---
+let siteData = {};
+
+// --- INITIALISATION ---
+document.addEventListener('DOMContentLoaded', () => {
+    // Remplissage de l'année
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Simulation de chargement JSON (On peut aussi utiliser fetch('data.json'))
+    initParticles();
+    requestAnimationFrame(animateParticles);
+    lucide.createIcons();
+    loadSiteData();
+});
+async function loadSiteData() {
+    try {
+        const response = await fetch('https://caelou.github.io/LZ/Assets/json/data.json');
+        siteData = await response.json();
+        renderContent();
+    } catch (error) {
+        console.error("Erreur lors du chargement des données :", error);
+    }
+}
+// --- RENDU DU CONTENU ---
+function renderContent() {
+    // Compétences
+    document.getElementById('skills-container').innerHTML = siteData.competences.map(s => `
+        <span class="px-6 py-2 bg-yellow-400/5 border border-yellow-400/20 text-yellow-400 rounded font-semibold hover:bg-yellow-400/10 hover:border-yellow-400 transition-all cursor-default">
+            ${s}
+        </span>`).join('');
+
+    // Hackathons
+    document.getElementById('hackathons-container').innerHTML = siteData.hackathons.map(h => `
+        <span class="px-4 py-2 bg-white/5 border border-white/10 text-gray-300 rounded text-sm font-medium">
+            ${h}
+        </span>`).join('');
+
+    // Expériences
+    document.getElementById('exp-container').innerHTML = siteData.experiences.map(e => `
+        <div class="relative pl-8 border-l-2 border-yellow-400">
+            <div class="absolute -left-[9px] top-0 w-4 h-4 bg-yellow-400 rounded-full"></div>
+            <div class="flex justify-between items-baseline mb-1">
+                <span class="text-xl font-bold text-yellow-400">${e.poste}</span>
+                <span class="text-sm text-gray-500 font-medium">${e.date}</span>
+            </div>
+            <span class="block italic text-white mb-4">${e.entreprise}</span>
+            <p class="text-gray-400 leading-relaxed">${e.description}</p>
+        </div>`).join('');
+
+    // Projets
+    document.getElementById('projects-container').innerHTML = siteData.projets.map(p => `
+        <div class="bg-[#1a1a1a] rounded-xl overflow-hidden cursor-pointer border border-white/5 hover:border-yellow-400 transition-all hover:scale-[1.02]" onclick="openModal('${p.id}')">
+            <div class="h-56 bg-cover bg-center relative" style="background-image:url('${p.img}')">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold text-yellow-400 mb-2">${p.titre}</h3>
+                <p class="text-gray-400 text-sm">${p.resume}</p>
+            </div>
+        </div>`).join('');
+}
+
+// --- GESTION DU MODAL ---
+function openModal(projectId) {
+    const project = siteData.projets.find(p => p.id === projectId);
+    document.getElementById('modal-body').innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div class="aspect-video w-full">
+                <iframe src="https://www.youtube.com/embed/${project.youtubeId}" class="w-full h-full rounded-lg" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="space-y-6">
+                <h1 class="text-5xl font-black">${project.titre}</h1>
+                <p class="text-xl text-gray-400 leading-relaxed">${project.description}</p>
+                <a href="${project.downloadUrl}" class="bg-yellow-400 text-black px-8 py-4 font-bold rounded uppercase text-sm inline-flex items-center gap-2 hover:bg-yellow-300 transition-colors">
+                    Obtenir le projet <i data-lucide="download" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>`;
+    document.getElementById('project-modal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    lucide.createIcons();
+}
+
+function closeModal() {
+    document.getElementById('project-modal').classList.add('hidden');
+    document.body.style.overflow = 'auto';
+}
+
+// --- LOGIQUE PARTICULES ---
 const canvas = document.getElementById('particles-js');
 const ctx = canvas.getContext('2d');
 let particles = [];
-let siteData = {}; // Sera rempli par le JSON
 
 function initParticles() {
     canvas.width = window.innerWidth;
@@ -14,8 +101,8 @@ function initParticles() {
             y: Math.random() * canvas.height,
             baseSize: Math.random() * 1.5 + 0.5,
             size: 0,
-            speedX: Math.random() * 0.4 - 0.2,
-            speedY: Math.random() * 0.4 - 0.2,
+            speedX: (Math.random() - 0.5) * 0.4,
+            speedY: (Math.random() - 0.5) * 0.4,
             opacity: 0,
             pulseSpeed: Math.random() * 0.02 + 0.01,
             pulseOffset: Math.random() * Math.PI * 2
@@ -41,96 +128,18 @@ function animateParticles(time) {
     requestAnimationFrame(animateParticles);
 }
 
-// --- CHARGEMENT DES DONNÉES JSON ---
-async function loadSiteData() {
-    try {
-        const response = await fetch('https://caelou.github.io/LZ/Assets/json/data.json');
-        siteData = await response.json();
-        renderContent();
-    } catch (error) {
-        console.error("Erreur lors du chargement des données :", error);
+// --- LISTENERS ---
+window.addEventListener('scroll', () => {
+    const indicator = document.getElementById('scroll-indicator');
+    if (window.scrollY > 50) {
+        indicator.style.opacity = '0';
+        indicator.style.pointerEvents = 'none';
+        indicator.style.transform = 'translate(-50%, 20px)';
+    } else {
+        indicator.style.opacity = '0.5';
+        indicator.style.pointerEvents = 'auto';
+        indicator.style.transform = 'translate(-50%, 0)';
     }
-}
-
-// --- RENDU DYNAMIQUE ---
-function renderContent() {
-    // Date automatique
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Compétences
-    document.getElementById('skills-container').innerHTML = siteData.competences
-        .map(s => `<span class="skill-tag">${s}</span>`).join('');
-
-    // Hackathons
-    document.getElementById('hackathons-container').innerHTML = siteData.hackathons
-        .map(h => `<span class="skill-tag" style="opacity: 0.8;">${h}</span>`).join('');
-
-    // Expériences
-    document.getElementById('exp-container').innerHTML = siteData.experiences
-        .map(e => `
-            <div class="exp-item">
-                <div class="exp-header">
-                    <span class="exp-title">${e.poste}</span>
-                    <span class="exp-date">${e.date}</span>
-                </div>
-                <span class="exp-company">${e.entreprise}</span>
-                <p style="color:var(--text-muted);">${e.description}</p>
-            </div>`).join('');
-
-    // Projets
-    document.getElementById('projects-container').innerHTML = siteData.projets
-        .map(p => `
-            <div class="project-card" onclick="openModal('${p.id}')">
-                <div class="project-img" style="background-image:url('${p.img}')"></div>
-                <div class="project-info">
-                    <h3>${p.titre}</h3>
-                    <p>${p.resume}</p>
-                </div>
-            </div>`).join('');
-
-    lucide.createIcons();
-}
-
-// --- GESTION MODALE ---
-function openModal(projectId) {
-    const project = siteData.projets.find(p => p.id === projectId);
-    if (!project) return;
-
-    document.getElementById('modal-body').innerHTML = `
-        <div class="modal-content">
-            <div class="modal-visuals">
-                <iframe src="https://www.youtube.com/embed/v=${project.youtubeId}" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="modal-text">
-                <h1>${project.titre}</h1>
-                <p class="modal-description">${project.description}</p>
-                <a href="${project.downloadUrl}" class="btn">Obtenir le projet <i data-lucide="download"></i></a>
-            </div>
-        </div>`;
-    document.getElementById('project-modal').style.display = 'block';
-    document.body.style.overflow = 'hidden';
-    lucide.createIcons();
-}
-
-function closeModal() {
-    document.getElementById('project-modal').style.display = 'none';
-    document.body.style.overflow = 'auto';
-}
-
-// --- INITIALISATION ---
-document.addEventListener('DOMContentLoaded', () => {
-    initParticles();
-    requestAnimationFrame(animateParticles);
-    loadSiteData(); // Charge le JSON
-});
-
-// Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
-    });
 });
 
 window.addEventListener('resize', initParticles);

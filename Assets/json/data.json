@@ -1,12 +1,12 @@
 {
-    "competences": [ "Unity", "C#", "C++", "Git", "Bitbucket", "Gameplay Engineering", "Architecture Tools", "Optimisation" ],
+    "competences": [ "Unity", "C#", "C++", "Git", "Bitbucket", "Architecture Tools", "Optimisation" ],
     "hackathons": [ "Global Game Jam", "Jam Sogeti Blue x Games", "Legal Games Week", "Hacking Industry Camp" ],
     "experiences": [
         {
             "poste": "Lead Développeur",
             "entreprise": "Visigram Paris",
             "date": "Depuis fév. 2024",
-            "description": "Responsable technique de la création et de l'évolution des frameworks logiciels pédagogiques. Management de la qualité et développement de solutions interactives."
+            "description": "Responsable technique de la création et de l'évolution des frameworks unity. Management de la qualité et développement de solutions interactives."
         },
         {
             "poste": "Développeur Gameplay",
@@ -60,6 +60,15 @@
             "titre": "SmashFight",
             "resume": "Action / Hypercasual",
             "img": "https://caelou.github.io/LZ/Assets/images/Games/SmashFight/Icon.png",
+            "youtubeId": "dQw4w9WgXcQ",
+            "description": "Replacez les tuiles à leur place pour reconstruire les routes.",
+            "downloadUrl": "https://caelou-dellmont.itch.io"
+        },
+        {
+            "id": "brick-builder",
+            "titre": "Brick builder",
+            "resume": "Puzzle / Hypercasual",
+            "img": "https://caelou.github.io/LZ/Assets/images/Games/BrickBuilder/Icon.png",
             "youtubeId": "dQw4w9WgXcQ",
             "description": "Replacez les tuiles à leur place pour reconstruire les routes.",
             "downloadUrl": "https://caelou-dellmont.itch.io"
