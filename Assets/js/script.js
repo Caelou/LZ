@@ -72,7 +72,7 @@ function openModal(projectId) {
                 <h1 class="text-5xl font-black">${project.titre}</h1>
                 <p class="text-xl text-gray-400 leading-relaxed">${project.description}</p>
                 <a href="${project.downloadUrl}" class="bg-yellow-400 text-black px-8 py-4 font-bold rounded uppercase text-sm inline-flex items-center gap-2 hover:bg-yellow-300 transition-colors">
-                    Obtenir le projet <i data-lucide="download" class="w-4 h-4"></i>
+                    Download <i data-lucide="download" class="w-4 h-4"></i>
                 </a>
             </div>
         </div>`;
