@@ -1,6 +1,6 @@
 // --- VARIABLES GLOBALES ET DONN�ES ---
 let siteData = {};
-
+let gameData = {};
 // --- INITIALISATION ---
 document.addEventListener('DOMContentLoaded', () => {
     // Remplissage de l'ann�e
@@ -84,6 +84,7 @@ function openModal(projectId) {
 function openProject(projectId) {
   sessionStorage.setItem("currentProjectId", projectId);
   window.location.href = "game/";
+  gameData = siteData.projets.find(p => p.id === projectId);
 }
 function closeModal() {
     document.getElementById('project-modal').classList.add('hidden');
@@ -150,7 +151,7 @@ const projectId = sessionStorage.getItem("currentProjectId");
 if (!projectId) {
 console.error("Aucun projet sélectionné");
 }
-const gameData = siteData.projets.find(p => p.id === projectId);
+
 
 if (!gameData) {
 console.error("Projet introuvable :", projectId);
