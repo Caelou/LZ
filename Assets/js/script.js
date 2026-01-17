@@ -145,5 +145,63 @@ window.addEventListener('scroll', () => {
         indicator.style.transform = 'translate(-50%, 0)';
     }
 });
+const projectId = sessionStorage.getItem("currentProjectId");
 
+if (!projectId) {
+console.error("Aucun projet sélectionné");
+}
+const gameData = siteData.projets.find(p => p.id === projectId);
+
+if (!gameData) {
+console.error("Projet introuvable :", projectId);
+}
+// --- RENDU DYNAMIQUE ---
+document.addEventListener('DOMContentLoaded', () => {
+    // Titre et Infos
+    document.getElementById('game-title').innerText = gameData.titre;
+    document.getElementById('game-genre').innerText = gameData.resume;
+    document.getElementById('game-description').innerHTML = gameData.description;
+    document.getElementById('game-platform').innerHTML = `<i data-lucide="monitor" class="w-4 h-4"></i> ${gameData.platform}`;
+    document.getElementById('game-role').innerText = gameData.role;
+    document.getElementById('download-btn').href = gameData.downloadLink;
+
+    // Tech badges
+    document.getElementById('game-tech').innerHTML = gameData.tech.map(t => 
+        `<span class="text-[0.6rem] px-2 py-1 bg-white/5 border border-white/10 rounded uppercase font-bold text-gray-400">${t}</span>`
+    ).join('');
+
+    // Carrousel
+    const carouselSection = document.getElementById('carousel-section');
+    const carouselContainer = document.getElementById('carousel-container');
+    if (gameData.screenshots && gameData.screenshots.length > 0) {
+        carouselSection.classList.remove('hidden');
+        carouselContainer.innerHTML = gameData.screenshots.map(src => `
+            <div class="min-w-full md:min-w-[80%] snap-center aspect-video overflow-hidden rounded-xl bg-gray-900">
+                <img src="${src}" alt="Screenshot" class="w-full h-full object-cover">
+            </div>
+        `).join('');
+    }
+
+    // Vidéos
+    const videoContainer = document.getElementById('videos-container');
+    if (gameData.videos && gameData.videos.length > 0) {
+        videoContainer.innerHTML = gameData.videos.map(id => `
+            <div class="aspect-video w-full rounded-2xl overflow-hidden border border-white/5 bg-gray-900">
+                <iframe src="https://www.youtube.com/embed/${id}" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
+            </div>
+        `).join('');
+    } else {
+        document.getElementById('videos-section').classList.add('hidden');
+    }
+
+    lucide.createIcons();
+});
+
+// --- NAVIGATION CARROUSEL ---
+function scrollCarousel(direction) {
+    const container = document.getElementById('carousel-container');
+    const scrollAmount = container.offsetWidth * 0.8;
+    container.scrollLeft += direction * scrollAmount;
+}
 window.addEventListener('resize', initParticles);
+
