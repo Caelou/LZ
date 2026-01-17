@@ -6,49 +6,7 @@
     <title>Présentation du Jeu | Lucas Zimmer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #050508;
-        }
-
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .custom-glass {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background: #FFD700;
-        }
-
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-    </style>
+    <link rel="stylesheet" href="../Assets/css/style.css">
 </head>
 <body class="text-white overflow-x-hidden">
 
@@ -153,32 +111,21 @@
 
     <script>
         // --- DATA À MODIFIER ICI ---
-        const gameData = {
-            title: "Nebula Protocol",
-            genre: "Sci-Fi Shooter / Prototype",
-            description: `
-                <p>Nebula Protocol est un prototype de shooter nerveux développé sous Unity en 48 heures. Le projet explore des mécaniques de manipulation de la gravité en temps réel et d'intelligence artificielle adaptative.</p>
-                <p>L'objectif était de créer un système où l'environnement réagit dynamiquement aux tirs du joueur, permettant des approches tactiques uniques dans des environnements clos.</p>
-            `,
-            platform: "PC (Windows)",
-            role: "Lead Gameplay Programmer",
-            tech: ["Unity 2022", "C#", "DOTween", "Shader Graph"],
-            screenshots: [
-                "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=1200",
-                "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=1200",
-                "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=1200"
-            ],
-            videos: [
-                "dQw4w9WgXcQ" // ID YouTube
-            ],
-            downloadLink: "https://votre-lien-itchio-ou-github.com"
-        };
+        const projectId = sessionStorage.getItem("currentProjectId");
 
+        if (!projectId) {
+        console.error("Aucun projet sélectionné");
+        }
+        const gameData = siteData.projets.find(p => p.id === projectId);
+
+        if (!gameData) {
+        console.error("Projet introuvable :", projectId);
+        }
         // --- RENDU DYNAMIQUE ---
         document.addEventListener('DOMContentLoaded', () => {
             // Titre et Infos
-            document.getElementById('game-title').innerText = gameData.title;
-            document.getElementById('game-genre').innerText = gameData.genre;
+            document.getElementById('game-title').innerText = gameData.titre;
+            document.getElementById('game-genre').innerText = gameData.resume;
             document.getElementById('game-description').innerHTML = gameData.description;
             document.getElementById('game-platform').innerHTML = `<i data-lucide="monitor" class="w-4 h-4"></i> ${gameData.platform}`;
             document.getElementById('game-role').innerText = gameData.role;

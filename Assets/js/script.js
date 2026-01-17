@@ -50,7 +50,7 @@ function renderContent() {
     // Projets
     //<div class="bg-[#1a1a1a] rounded-xl overflow-hidden cursor-pointer border border-white/5 hover:border-yellow-400 transition-all hover:scale-[1.02]" onclick="openModal('${p.id}')">
     document.getElementById('projects-container').innerHTML = siteData.projets.map(p => `
-        <div class="bg-[#1a1a1a] rounded-xl overflow-hidden cursor-pointer border border-white/5 hover:border-yellow-400 transition-all hover:scale-[1.02]" onclick="window.location.href='game/'">
+        <div class="bg-[#1a1a1a] rounded-xl overflow-hidden cursor-pointer border border-white/5 hover:border-yellow-400 transition-all hover:scale-[1.02]" onclick="openProject('${p.id}')">
             <div class="h-56 bg-cover bg-center relative" style="background-image:url('${p.img}')">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
             </div>
@@ -81,7 +81,10 @@ function openModal(projectId) {
     document.body.style.overflow = 'hidden';
     lucide.createIcons();
 }
-
+function openProject(projectId) {
+  sessionStorage.setItem("currentProjectId", projectId);
+  window.location.href = "game/";
+}
 function closeModal() {
     document.getElementById('project-modal').classList.add('hidden');
     document.body.style.overflow = 'auto';
