@@ -5,7 +5,7 @@
         {
             "poste": "Lead Développeur",
             "entreprise": "Visigram Paris",
-            "date": "Depuis fév. 2024",
+            "date": "2024 - 2026",
             "description": "Responsable technique de la création et de l'évolution des frameworks unity. Management de la qualité et développement de solutions interactives."
         },
         {
@@ -30,17 +30,27 @@
     "projets": [
         {
             "id": "bubble-sort",
-            "titre": "Bubble Sort",
-            "resume": "Puzzle / Hypercasual",
+            "title": "Bubble Sort",
+            "genre": "Puzzle / Hypercasual",
             "img": "https://caelou.github.io/LZ/Assets/images/Games/BubbleSort/bubble%20sort%20icon.png",
-            "youtubeId": "Lvc7Id1fdoY",
-            "description": "Balayez dans n'importe quelle direction pour déplacer toutes les bulles et détruisez-les si le mur a la même couleur.",
-            "downloadUrl": "https://caelou-dellmont.itch.io"
+            "screenshots": [
+                "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=1200",
+                "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=1200",
+                "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=1200"
+            ],
+            "platform": "PC (Windows)",
+            "videos": [
+                "dQw4w9WgXcQ",
+                "dQw4w9WgXcQ",
+                "dQw4w9WgXcQ"
+            ],
+            "description": "Replacez les tuiles à leur place pour reconstruire les routes.",
+            "downloadLink": "https://caelou-dellmont.itch.io"
         },
         {
             "id": "bubble-pop",
-            "titre": "BubblePop",
-            "resume": "Puzzle / Hypercasual",
+            "title": "BubblePop",
+            "genre": "Puzzle / Hypercasual",
             "img": "https://caelou.github.io/LZ/Assets/images/Games/BubblePop/Icon_Full.png",
             "youtubeId": "yd0025jypJc",
             "description": "Faites éclater les bulles dans le bon ordre pour toutes les faire exploser.",
@@ -48,8 +58,8 @@
         },
         {
             "id": "hexatown",
-            "titre": "Hexatown",
-            "resume": "Puzzle / Hypercasual",
+            "title": "Hexatown",
+            "genre": "Puzzle / Hypercasual",
             "img": "https://caelou.github.io/LZ/Assets/images/Games/HexaTown/icon.png",
             "youtubeId": "DTYSEDtm0JA",
             "description": "Replacez les tuiles à leur place pour reconstruire les routes.",
@@ -57,8 +67,8 @@
         },
         {
             "id": "smash-fight",
-            "titre": "SmashFight",
-            "resume": "Action / Hypercasual",
+            "title": "SmashFight",
+            "genre": "Action / Hypercasual",
             "img": "https://caelou.github.io/LZ/Assets/images/Games/SmashFight/Icon.png",
             "youtubeId": "7S1gPMR4G5I",
             "description": "Replacez les tuiles à leur place pour reconstruire les routes.",
@@ -66,8 +76,8 @@
         },
         {
             "id": "brick-builder",
-            "titre": "Brick builder",
-            "resume": "Puzzle / Hypercasual",
+            "title": "Brick builder",
+            "genre": "Puzzle / Hypercasual",
             "img": "https://caelou.github.io/LZ/Assets/images/Games/BrickBuilder/Icon.png",
             "screenshots": [
                 "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=1200",
@@ -76,6 +86,8 @@
             ],
             "platform": "PC (Windows)",
             "videos": [
+                "dQw4w9WgXcQ",
+                "dQw4w9WgXcQ",
                 "dQw4w9WgXcQ"
             ],
             "description": "Replacez les tuiles à leur place pour reconstruire les routes.",
