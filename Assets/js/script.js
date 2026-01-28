@@ -23,7 +23,7 @@ async function loadSiteData() {
 }
 // --- RENDU DU CONTENU ---
 function renderContent() {
-    // Comp�tences
+    // Skills
     document.getElementById('skills-container').innerHTML = siteData.competences.map(s => `
         <span class="px-6 py-2 bg-yellow-400/5 border border-yellow-400/20 text-yellow-400 rounded font-semibold hover:bg-yellow-400/10 hover:border-yellow-400 transition-all cursor-default">
             ${s}
@@ -35,7 +35,7 @@ function renderContent() {
             ${h}
         </span>`).join('');
 
-    // Exp�riences
+    // Experiences
     document.getElementById('exp-container').innerHTML = siteData.experiences.map(e => `
         <div class="relative pl-8 border-l-2 border-yellow-400">
             <div class="absolute -left-[9px] top-0 w-4 h-4 bg-yellow-400 rounded-full"></div>
@@ -47,7 +47,7 @@ function renderContent() {
             <p class="text-gray-400 leading-relaxed">${e.description}</p>
         </div>`).join('');
 
-    // Projets
+    // Projects
     //<div class="bg-[#1a1a1a] rounded-xl overflow-hidden cursor-pointer border border-white/5 hover:border-yellow-400 transition-all hover:scale-[1.02]" onclick="openModal('${p.id}')">
     document.getElementById('projects-container').innerHTML = siteData.projets.map(p => `
         <div class="bg-[#1a1a1a] rounded-xl overflow-hidden cursor-pointer border border-white/5 hover:border-yellow-400 transition-all hover:scale-[1.02]" onclick="openProject('${p.id}')">
@@ -55,13 +55,13 @@ function renderContent() {
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
             </div>
             <div class="p-6">
-                <h3 class="text-xl font-bold text-yellow-400 mb-2">${p.titre}</h3>
-                <p class="text-gray-400 text-sm">${p.resume}</p>
+                <h3 class="text-xl font-bold text-yellow-400 mb-2">${p.title}</h3>
+                <p class="text-gray-400 text-sm">${p.genre}</p>
             </div>
         </div>`).join('');
 }
 
-// --- GESTION DU MODAL ---
+// --- MODAL MANAGER ---
 function openModal(projectId) {
     const project = siteData.projets.find(p => p.id === projectId);
     document.getElementById('modal-body').innerHTML = `
@@ -70,7 +70,7 @@ function openModal(projectId) {
                 <iframe src="https://www.youtube.com/embed/${project.youtubeId}" class="w-full h-full rounded-lg" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="space-y-6">
-                <h1 class="text-5xl font-black">${project.titre}</h1>
+                <h1 class="text-5xl font-black">${project.title}</h1>
                 <p class="text-xl text-gray-400 leading-relaxed">${project.description}</p>
                 <a href="${project.downloadUrl}" class="bg-yellow-400 text-black px-8 py-4 font-bold rounded uppercase text-sm inline-flex items-center gap-2 hover:bg-yellow-300 transition-colors">
                     Download <i data-lucide="download" class="w-4 h-4"></i>
@@ -82,16 +82,15 @@ function openModal(projectId) {
     lucide.createIcons();
 }
 function openProject(projectId) {
-  sessionStorage.setItem("currentProjectId", projectId);
-  window.location.href = "game/";
-  gameData = siteData.projets.find(p => p.id === projectId);
+    window.location.href = `game/index.html?game=${projectId}`;
+//    gameData = siteData.projets.find(p => p.id === projectId);
 }
 function closeModal() {
     document.getElementById('project-modal').classList.add('hidden');
     document.body.style.overflow = 'auto';
 }
 
-// --- LOGIQUE PARTICULES ---
+// --- PARTICLE LOGIC ---
 const canvas = document.getElementById('particles-js');
 const ctx = canvas.getContext('2d');
 let particles = [];
@@ -146,63 +145,4 @@ window.addEventListener('scroll', () => {
         indicator.style.transform = 'translate(-50%, 0)';
     }
 });
-const projectId = sessionStorage.getItem("currentProjectId");
-
-if (!projectId) {
-console.error("Aucun projet sélectionné");
-}
-
-
-if (!gameData) {
-console.error("Projet introuvable :", projectId);
-}
-// --- RENDU DYNAMIQUE ---
-document.addEventListener('DOMContentLoaded', () => {
-    // Titre et Infos
-    document.getElementById('game-title').innerText = gameData.titre;
-    document.getElementById('game-genre').innerText = gameData.resume;
-    document.getElementById('game-description').innerHTML = gameData.description;
-    document.getElementById('game-platform').innerHTML = `<i data-lucide="monitor" class="w-4 h-4"></i> ${gameData.platform}`;
-    document.getElementById('game-role').innerText = gameData.role;
-    document.getElementById('download-btn').href = gameData.downloadLink;
-
-    // Tech badges
-    document.getElementById('game-tech').innerHTML = gameData.tech.map(t => 
-        `<span class="text-[0.6rem] px-2 py-1 bg-white/5 border border-white/10 rounded uppercase font-bold text-gray-400">${t}</span>`
-    ).join('');
-
-    // Carrousel
-    const carouselSection = document.getElementById('carousel-section');
-    const carouselContainer = document.getElementById('carousel-container');
-    if (gameData.screenshots && gameData.screenshots.length > 0) {
-        carouselSection.classList.remove('hidden');
-        carouselContainer.innerHTML = gameData.screenshots.map(src => `
-            <div class="min-w-full md:min-w-[80%] snap-center aspect-video overflow-hidden rounded-xl bg-gray-900">
-                <img src="${src}" alt="Screenshot" class="w-full h-full object-cover">
-            </div>
-        `).join('');
-    }
-
-    // Vidéos
-    const videoContainer = document.getElementById('videos-container');
-    if (gameData.videos && gameData.videos.length > 0) {
-        videoContainer.innerHTML = gameData.videos.map(id => `
-            <div class="aspect-video w-full rounded-2xl overflow-hidden border border-white/5 bg-gray-900">
-                <iframe src="https://www.youtube.com/embed/${id}" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
-            </div>
-        `).join('');
-    } else {
-        document.getElementById('videos-section').classList.add('hidden');
-    }
-
-    lucide.createIcons();
-});
-
-// --- NAVIGATION CARROUSEL ---
-function scrollCarousel(direction) {
-    const container = document.getElementById('carousel-container');
-    const scrollAmount = container.offsetWidth * 0.8;
-    container.scrollLeft += direction * scrollAmount;
-}
-window.addEventListener('resize', initParticles);
 

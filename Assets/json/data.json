@@ -34,26 +34,28 @@
             "genre": "Puzzle / Hypercasual",
             "img": "https://caelou.github.io/LZ/Assets/images/Games/BubbleSort/bubble%20sort%20icon.png",
             "screenshots": [
-                "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=1200",
-                "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=1200",
-                "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=1200"
+                "https://caelou.github.io/LZ/Assets/images/Games/BubbleSort/aQAwdy.png",
+                "https://caelou.github.io/LZ/Assets/images/Games/BubbleSort/pyHT2y.png",
+                "https://caelou.github.io/LZ/Assets/images/Games/BubbleSort/TsOJeA.png"
             ],
-            "platform": "PC (Windows)",
+            "platform": "Android",
             "videos": [
-                "dQw4w9WgXcQ",
-                "dQw4w9WgXcQ",
-                "dQw4w9WgXcQ"
+                "Lvc7Id1fdoY"
             ],
-            "description": "Replacez les tuiles à leur place pour reconstruire les routes.",
-            "downloadLink": "https://caelou-dellmont.itch.io"
+            "description": "Balayez dans n'importe quelle direction pour déplacer toutes les bulles et détruisez-les si le mur a la même couleur.\n\nVous gagnez chaque niveau lorsqu'il n'y a plus de bulle, et il existe de nombreux niveaux avec différents mécanismes et thèmes.",
+            "downloadLink": "https://caelou-dellmont.itch.io/bubble-sort"
         },
         {
             "id": "bubble-pop",
             "title": "BubblePop",
             "genre": "Puzzle / Hypercasual",
             "img": "https://caelou.github.io/LZ/Assets/images/Games/BubblePop/Icon_Full.png",
-            "youtubeId": "yd0025jypJc",
-            "description": "Faites éclater les bulles dans le bon ordre pour toutes les faire exploser.",
+            "screenshots": [],
+            "platform": "Android",
+            "videos": [
+                "yd0025jypJc"
+            ],
+            "description": "Faites éclater les bulles dans le bon ordre pour toutes les faire exploser.\n\nChaque fois qu'une bulle explose, elle impacte les bulles à côté, et certaines bulles doivent être impactées plusieurs fois pour exploser.\n\nVous gagnez chaque niveau lorsqu'il n'y a plus de bulle.",
             "downloadUrl": "https://caelou-dellmont.itch.io"
         },
         {
